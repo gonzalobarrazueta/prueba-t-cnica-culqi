@@ -1,5 +1,5 @@
-let s = "barfoofoobarthefoobarman";
-let words = ["bar","foo","the"];
+let s = "dogowldogcatowlcatdog";
+let words = ["dog","owl","cat", "owl"];
 
 let findSubstrings = function (s, words) {
 
@@ -27,9 +27,11 @@ let findSubstrings = function (s, words) {
     return indices;
 }
 
-function allWordsArePresent(s, words) {
+function allWordsArePresent(substring, words) {
     for (let i = 0; i < words.length; i++) {
-        if (s.indexOf(words[i]) === -1) return false;
+        let index = substring.indexOf(words[i]);
+        if (index === -1) return false;
+        substring = substring.replace(words[i], '');
     }
     return true;
 }
