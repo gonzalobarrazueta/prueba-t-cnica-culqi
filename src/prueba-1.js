@@ -1,6 +1,3 @@
-let s = "dogowldogcatowlcatdog";
-let words = ["dog","owl","cat", "owl"];
-
 let findSubstrings = function (s, words) {
 
     let wordLength = words[0].length;
@@ -36,4 +33,6 @@ function allWordsArePresent(substring, words) {
     return true;
 }
 
-console.log(findSubstrings(s, words));
+module.exports = {
+    findSubstrings
+}
