@@ -1,4 +1,5 @@
 const substrings = require('./prueba-1')
+const mongodb = require('./mongodb')
 const express = require('express')
 const app = express();
 
@@ -13,9 +14,9 @@ app.post('/substrings', (req, res) => {
     const data = req.body;
     const response = substrings.findSubstrings(data.s, data.words);
 
-    res.status(200).json({
-        response
-    });
+    mongodb.saveResultsDocument({ output: response })
+        .then(() => res.status(200).json({response }))
+        .catch((e) => res.status(500).json({ error: e }));
 });
 
 app.listen(3000);
