@@ -12,7 +12,7 @@ En la carpeta `src` se encuentran los siguientes archivos:
 1. Clonar el repositorio
 2. Instalar paquetes: `npm install`
 3. Ejecutar los contenedores de Docker: `docker compose up`
-4. Utilizar una herramienta como Postman para realizar una petición POST a `http://localhost:3000/` con el siguiente body:
+4. Utilizar una herramienta como Postman para realizar una petición POST a `http://localhost:3000/substrings` con el siguiente body:
     ```json
     {
         "s": "barfoothefoobarman",
